@@ -21,6 +21,7 @@ const CourseDetails = () => {
     const {courseId}  = useParams();
     const [courseData,setCourseData]=useState(null);
     const [confirmationModal,setConfirmationModal]=useState(null);
+    const [isActive,setIsActive]=useState(null);
 
     useEffect(()=>{
         const getCourseDetails=async()=>{
@@ -106,8 +107,7 @@ const CourseDetails = () => {
         studentsEnrolled,
         createdAt
     }=courseData?.data?.courseDetails;
-
-    const [isActive,setIsActive]=useState(Array(0));
+    
 
     const handleActive=(id)=>{
         setIsActive(
